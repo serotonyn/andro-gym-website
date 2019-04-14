@@ -17,6 +17,88 @@ const Header = ({ name, title, date }) => (
   </header>
 );
 
+const Footer = () => {
+  return (
+    <footer>
+      <div style={{ width: 190, margin: '0 auto' }}>
+        <div
+          style={{
+            width: 60,
+            height: 60,
+            border: '2px solid',
+            borderColor: '#343851',
+            borderRadius: 17,
+            fontSize: 25,
+            textAlign: 'center',
+            paddingTop: 14,
+            margin: '0 auto',
+            marginBottom: 5,
+            opacity: 0.2,
+          }}
+        >
+          ↑
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div
+            style={{
+              width: 60,
+              height: 60,
+              border: '2px solid',
+              borderColor: '#343851',
+              opacity: 0.2,
+              borderRadius: 17,
+              fontSize: 25,
+              textAlign: 'center',
+              paddingTop: 14,
+            }}
+          >
+            ←
+          </div>
+          <div
+            style={{
+              width: 60,
+              height: 60,
+              border: '2px solid',
+              borderColor: '#343851',
+              borderRadius: 17,
+              fontSize: 25,
+              textAlign: 'center',
+              paddingTop: 14,
+              opacity: 0.2,
+            }}
+          >
+            ↓
+          </div>
+          <div
+            style={{
+              width: 60,
+              height: 60,
+              border: '2px solid',
+              borderColor: '#343851',
+              borderRadius: 17,
+              fontSize: 25,
+              textAlign: 'center',
+              paddingTop: 14,
+              opacity: 0.7,
+            }}
+          >
+            →
+          </div>
+        </div>
+      </div>
+      <div
+        style={{
+          textAlign: 'center',
+          fontSize: 19,
+          marginTop: 10,
+        }}
+      >
+        Utilisez le clavier pour naviguer vers le prochain slide.
+      </div>
+    </footer>
+  );
+};
+
 class TemplateWrapper extends Component {
   NEXT = [13, 32, 39];
   PREV = 37;
@@ -56,6 +138,11 @@ class TemplateWrapper extends Component {
 
   render() {
     const { location, children, site } = this.props;
+    const {
+      location: { pathname },
+    } = this.props;
+
+    const isFirstSlide = pathname === '/1';
 
     return (
       <div>
@@ -77,6 +164,7 @@ class TemplateWrapper extends Component {
             </div>
           </Transition>
         </Swipeable>
+        {isFirstSlide && <Footer />}
       </div>
     );
   }

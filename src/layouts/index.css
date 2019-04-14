@@ -2,7 +2,7 @@
   --bg: #fdfdfd;
   --meta: #888;
   --accent: #3178cd;
-  --text: black;
+  --text: #343851;
   --base: 1.5rem;
 }
 
@@ -152,6 +152,14 @@ header {
   padding: 20px;
 
   user-select: none;
+}
+
+footer {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+
+  transform: translateX(-50%);
 }
 
 header a,
