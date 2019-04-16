@@ -1,5 +1,5 @@
 :root {
-  --bg: #fdfdfd;
+  --bg: #eee;
   --meta: #888;
   --accent: #3178cd;
   --text: #343851;
@@ -118,6 +118,7 @@ code {
 
 a:hover {
   color: var(--accent);
+  cursor: default;
 }
 
 h1 {
@@ -162,6 +163,22 @@ footer {
   transform: translateX(-50%);
 }
 
+@media screen and (max-width: 900px){
+  footer{
+    display: none
+  }
+}
+
+.footerMob {
+  text-align: center
+}
+
+@media screen and (min-width: 900px){
+  .footerMob{
+    display: none
+  }
+}
+
 header a,
 time {
   text-decoration: none;
@@ -175,4 +192,23 @@ header a:hover {
 
 header span {
   color: var(--text);
+}
+
+.contacts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.facebook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

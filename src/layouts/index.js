@@ -5,6 +5,9 @@ import Helmet from 'react-helmet';
 import Swipeable from 'react-swipeable';
 import Transition from '../components/transition';
 
+import Footer from '../components/Footer';
+import FooterMob from '../components/FooterMob';
+
 import './index.css';
 
 const Header = ({ name, title, date }) => (
@@ -16,88 +19,6 @@ const Header = ({ name, title, date }) => (
     <time>{date}</time>
   </header>
 );
-
-const Footer = () => {
-  return (
-    <footer>
-      <div style={{ width: 190, margin: '0 auto' }}>
-        <div
-          style={{
-            width: 60,
-            height: 60,
-            border: '2px solid',
-            borderColor: '#343851',
-            borderRadius: 17,
-            fontSize: 25,
-            textAlign: 'center',
-            paddingTop: 14,
-            margin: '0 auto',
-            marginBottom: 5,
-            opacity: 0.2,
-          }}
-        >
-          ↑
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <div
-            style={{
-              width: 60,
-              height: 60,
-              border: '2px solid',
-              borderColor: '#343851',
-              opacity: 0.2,
-              borderRadius: 17,
-              fontSize: 25,
-              textAlign: 'center',
-              paddingTop: 14,
-            }}
-          >
-            ←
-          </div>
-          <div
-            style={{
-              width: 60,
-              height: 60,
-              border: '2px solid',
-              borderColor: '#343851',
-              borderRadius: 17,
-              fontSize: 25,
-              textAlign: 'center',
-              paddingTop: 14,
-              opacity: 0.2,
-            }}
-          >
-            ↓
-          </div>
-          <div
-            style={{
-              width: 60,
-              height: 60,
-              border: '2px solid',
-              borderColor: '#343851',
-              borderRadius: 17,
-              fontSize: 25,
-              textAlign: 'center',
-              paddingTop: 14,
-              opacity: 0.7,
-            }}
-          >
-            →
-          </div>
-        </div>
-      </div>
-      <div
-        style={{
-          textAlign: 'center',
-          fontSize: 19,
-          marginTop: 10,
-        }}
-      >
-        Utilisez le clavier pour naviguer vers le prochain slide.
-      </div>
-    </footer>
-  );
-};
 
 class TemplateWrapper extends Component {
   NEXT = [13, 32, 39];
@@ -143,28 +64,40 @@ class TemplateWrapper extends Component {
     } = this.props;
 
     const isFirstSlide = pathname === '/1';
+    const isLastSlide = pathname === '/5';
 
     return (
       <div>
         <Helmet
           title={`${site.siteMetadata.title} — ${site.siteMetadata.name}`}
+          content="#333"
         />
-        <Header
-          name={site.siteMetadata.name}
-          title={site.siteMetadata.title}
-          date={site.siteMetadata.date}
-        />
+        {/* {isLastSlide && (
+          <Header
+            name={site.siteMetadata.name}
+            title={site.siteMetadata.title}
+            date={site.siteMetadata.date}
+          />
+        )} */}
         <Swipeable
           onSwipedLeft={this.swipeLeft}
           onSwipedRight={this.swipeRight}
         >
           <Transition location={location}>
-            <div id="slide" style={{ width: '100%' }}>
+            <div
+              id="slide"
+              style={{
+                width: '100%',
+                height: isFirstSlide ? '90vh' : '100vh',
+                marginTop: isFirstSlide ? '0px' : 0,
+              }}
+            >
               {children}
+              {isFirstSlide && <Footer />}
             </div>
           </Transition>
         </Swipeable>
-        {isFirstSlide && <Footer />}
+        {isFirstSlide && <FooterMob />}
       </div>
     );
   }
