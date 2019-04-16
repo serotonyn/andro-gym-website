@@ -56,15 +56,9 @@ Et encore davantage de fonctionnalités à découvrir...
 
 ---
 
-Contactez-nous maintenant et profitez de la remise de lancement (15%)
+Contactez-nous maintenant et profitez de la remise de lancement (15%):
 
-<div class="contacts">
-    <div class="tel" >
-        <img src="./tel.png" width="40"/>
-        <span>0555 76 73 19</span>
-    </div>
-        <a class="facebook" href="https://www.facebook.com/AndroGym-271799880414413/">
-            <img src="./facebook.png" width="60"/>
-            <span>AndroGym</span>
-        </a>
-</div>
+    tel: 0555 76 73 19
+
+
+Suivez-nous sur [Facebook](https://www.facebook.com/AndroGym-271799880414413) !
