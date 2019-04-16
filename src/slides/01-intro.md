@@ -1,4 +1,4 @@
-[![androgym](./01-logo.png)](#)
+[![androgym](./logo.png)](#)
 
 [![androgym](./01-b&w.png)](#)
 
