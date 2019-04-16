@@ -1,4 +1,5 @@
-[![androgym](./logo.png)](#)
+<!-- [![androgym](./logo.png)](#) -->
+<img alt="logo" src="./logo_grey_background.png">
 
 [![androgym](./01-b&w.png)](#)
 
